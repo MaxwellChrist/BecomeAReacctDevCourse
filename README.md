@@ -1,1 +1,1 @@
-"# BecomeAReacctDevCourse" 
+This repo is one I've used to document my work when doing a linkedin course. The name of the course is React.js essential training and it's part of a series I'm looking to complete called "Become a react developer". Here is a link to the course: https://www.linkedin.com/learning/react-js-essential-training-14836121/building-modern-user-interfaces-with-react?autoplay=true&contextUrn=urn%3Ali%3AlyndaLearningPath%3A593715e0498e9e9be7fb8506
