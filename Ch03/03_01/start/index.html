@@ -11,24 +11,62 @@
       crossorigin
     ></script>
     <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
-    <title>React ⚛️</title>
+    <title>Ch 3</title>
   </head>
   <body>
     <div id="root"></div>
 
     <script type="text/babel">
-      let robot = "🤖";
-      let cowboy = "🤠";
-      let moon = "🌝";
-      let name = "React";
-      ReactDOM.render(
-        <ul>
-          <li>{robot}</li>
-          <li>{cowboy}</li>
-          <li>{moon}</li>
-          <li>{name.toUpperCase()}</li>
-          <li>{name.length}</li>
-        </ul>,
+    const dishes = [
+      "Black Bean Soup", "Mac & Cheese", "Lasagna"
+    ]
+    const dishObjs = dishes.map((dish, id) => ({
+      id: id,
+      title: dish
+    }))
+
+    function Header(props) {
+      return (
+        <header>
+          <h1>{props.name}'s Kitchen</h1>
+        </header>
+      )
+    }
+    function Main(props) {
+      return (
+        <section>
+          <img 
+          height={200} 
+          src="https://images.pexels.com/photos/1581384/pexels-photo-1581384.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
+          alt="Restaurant diding area with cozy lighting"
+        />
+          <ul>
+            {props.dishes.map((item, index) => (
+              <li key={item.id}>{item.title}</li>
+            ))}
+          </ul>
+        </section>
+      )
+    }
+    function Footer(props) {
+      return (
+        <footer>
+          <p>Copyright {props.year}</p>
+        </footer>
+      )
+    }
+    function App() {
+      return (
+       // React Fragment will not add anything to the DOM, but it will allow us to render sibling components
+        <React.Fragment>
+          <Header name = "Max" />
+          <Main dishes = {dishObjs}/>
+          <Footer year = {new Date().getFullYear()} />
+        </React.Fragment>
+      )
+    }
+    ReactDOM.render(
+      <App />,
         document.getElementById("root")
       );
     </script>
